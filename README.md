@@ -38,6 +38,32 @@ You do not need to clone a repository, run commands, edit YAML, or know the mode
 
 If Cowork cannot access the repository, connect the Claude GitHub App to `gd-ba-harness`. For an organization-managed installation, ask an Owner or Primary Owner to open **Organization settings → Plugins → Add plugin → GitHub**, enter `VarvaraTi/gd-ba-harness`, and assign the plugin to your team.
 
+### Install in Claude Code or CLI
+
+Inside an active Claude Code session:
+
+```text
+/plugin marketplace add VarvaraTi/gd-ba-harness
+/plugin install gd-ba-harness@gd-ba-harness-marketplace
+```
+
+Run `/reload-plugins` if Claude Code requests it. Invoke the installed skill with:
+
+```text
+/gd-ba-harness:gd-ba-harness
+```
+
+From a terminal, install it for all your projects:
+
+```sh
+claude plugin marketplace add VarvaraTi/gd-ba-harness
+claude plugin install gd-ba-harness@gd-ba-harness-marketplace --scope user
+```
+
+Use `--scope project` instead to limit the installation to the current project, or `--scope local` for an unshared local installation.
+
+Jira and Confluence access in Claude Code requires separately configured MCP servers or connectors. Without them, the harness can use chat and local files but must stop any requested Jira or Confluence comparison.
+
 ### 2. Describe one change
 
 Start with `/gd-ba-harness`, name the project, and explain the business need in your own words:
