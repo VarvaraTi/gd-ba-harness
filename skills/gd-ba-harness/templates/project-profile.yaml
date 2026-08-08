@@ -9,6 +9,17 @@ authority:
   specialist_routes: {}
 sources:
   registry: Harness/source-registry.yaml
+knowledge:
+  strategy: minimal # managed | existing | minimal
+  max_in_progress_features: 1
+  immutable_feature_spec: true
+  paths:
+    feature_index: features/INDEX.md
+    project_status: features/STATUS.md
+    feature_root: features
+    feature_spec: FEATURE.md
+    feature_status: STATUS.md
+    legacy_spec: Outputs/requirements.md
 connectors:
   jira:
     enabled: false

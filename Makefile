@@ -10,6 +10,7 @@ validate:
 	@rg -q '^disable-model-invocation: true$$' "$(SKILL)"
 	@! rg -q 'gd-requirements' skills/gd-ba-harness
 	@rg -q 'MUST READ `assets/requirements-lite.md`' "$(SKILL)"
+	@rg -q 'MUST READ `assets/knowledge-organization.md`' "$(SKILL)"
 	@rg -q 'mode: read-only' skills/gd-ba-harness/templates/project-profile.yaml
 	@echo "Skill metadata and standalone contract are valid."
 
@@ -26,8 +27,16 @@ test: validate
 	@rg -q '^on_limit_exceeded: stop-and-propose-split$$' skills/gd-ba-harness/templates/run-manifest.yaml
 	@rg -q 'requirement-set hashes are unchanged' skills/gd-ba-harness/assets/validate.md
 	@rg -qi 'do not perform an exhaustive standards sweep' skills/gd-ba-harness/assets/requirements-lite.md
-	@test "$$(rg -l '^# ' tests/fixtures/*.md | wc -l | tr -d ' ')" = "5"
-	@echo "Templates, budgets, modes, and fixtures are valid."
+	@rg -q '^  strategy: minimal' skills/gd-ba-harness/templates/project-profile.yaml
+	@rg -q '^  max_in_progress_features: 1$$' skills/gd-ba-harness/templates/project-profile.yaml
+	@rg -q '^  immutable_feature_spec: true$$' skills/gd-ba-harness/templates/project-profile.yaml
+	@rg -q '^feature_id:' skills/gd-ba-harness/templates/FEATURE.md
+	@rg -q 'Derived from `features/\*/FEATURE.md`' skills/gd-ba-harness/templates/FEATURE-INDEX.md
+	@rg -q 'Duplicate feature gate' skills/gd-ba-harness/assets/knowledge-organization.md
+	@rg -q 'sole authoritative feature specification' skills/gd-ba-harness/assets/requirements-lite.md
+	@rg -q 'scratch/' skills/gd-ba-harness/assets/knowledge-organization.md
+	@test "$$(rg -l '^# ' tests/fixtures/*.md | wc -l | tr -d ' ')" = "8"
+	@echo "Templates, budgets, knowledge strategies, and fixtures are valid."
 
 build: test
 	@rm -rf dist

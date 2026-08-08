@@ -16,6 +16,34 @@ The harness can:
 - keep assumptions and unresolved questions visible;
 - prepare approved requirements for engineering and independent testing.
 
+## Knowledge organization
+
+The harness adapts to the project instead of forcing one folder structure:
+
+- `managed`: new projects use one feature folder per bounded change.
+- `existing`: the harness maps approved project locations and does not move files.
+- `minimal`: small or temporary work uses the original `Harness/Inputs/Analysis/Outputs` workspace.
+
+In managed projects, each feature has one authoritative specification:
+
+```text
+features/
+├── INDEX.md
+├── STATUS.md
+└── PAY-123-saved-payment-method/
+    ├── FEATURE.md
+    ├── STATUS.md
+    ├── inputs/
+    ├── analysis/
+    ├── decisions/
+    ├── evidence/
+    └── scratch/
+```
+
+`FEATURE.md` contains intent, requirements, and acceptance criteria. `STATUS.md` contains mutable delivery state only. `scratch/` is temporary and excluded from normal retrieval.
+
+Before creating a managed feature, the harness searches the compact `features/INDEX.md`, then reads only likely candidate `FEATURE.md` files. Exact duplicates reuse the existing feature; overlapping scope stops for a product-owner decision.
+
 ## Analyst quick start
 
 You do not need to clone a repository, run commands, edit YAML, or know the mode names.
@@ -150,6 +178,20 @@ Update REQ-PAY-003 using Jira PAY-123 and policy POL-12.
 ```
 
 If project configuration is missing, the plugin proposes it and asks you to confirm it. The analyst should review the project name, owners, source access, and data classification; the plugin manages the workspace files.
+
+### Managed projects
+
+For a new managed project, ask the harness to create a feature:
+
+```text
+/gd-ba-harness
+
+Create feature PAY-123: saved payment methods.
+Use managed knowledge organization.
+Product owner: Anna Novak.
+```
+
+The harness proposes the feature ID, folder, sources, and duplicate-check result before creating files. If a feature with the same intent already exists, it uses that feature instead of creating another one.
 
 ## What happens behind the scenes
 

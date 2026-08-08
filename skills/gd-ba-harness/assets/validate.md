@@ -5,7 +5,7 @@ Use `VALIDATE` to audit an existing requirement set without changing it.
 ## Preflight additions
 
 - Record the requirement-set version, file list, and content hashes in the run manifest.
-- Set expected output to `Analysis/validation-report.md`.
+- In managed mode, set expected output to `<feature>/analysis/validation-report.md`; otherwise use `Analysis/validation-report.md`.
 - Set all requirement, connector, and handoff write paths to denied.
 - Name the reviewer and any people authorized to waive failed checks.
 
@@ -26,6 +26,8 @@ Check:
 
 ## Postflight additions
 
-Confirm the requirement-set hashes are unchanged. If any requirement file, `Outputs/INDEX.md`, or handoff record changed, mark the run invalid.
+Confirm the requirement-set hashes are unchanged. In managed mode, any change to the active `FEATURE.md`,
+feature index, or handoff record invalidates the run. In minimal or existing mode, any change to the mapped
+requirement file, `Outputs/INDEX.md`, or handoff record invalidates the run.
 
 The validation report must distinguish passed checks, findings, missing evidence, and waived checks. Each waiver needs a named owner and reason. A finding that requires a semantic change routes to `UPDATE`; `VALIDATE` never fixes it.

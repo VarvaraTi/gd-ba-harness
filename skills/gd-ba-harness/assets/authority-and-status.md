@@ -12,6 +12,10 @@ Requirement units use `Draft`, `Approved`, and `Removed`. Track `proposed`, `dis
 
 Do not include unresolved or stale material in an approved handoff as settled guidance.
 
+In managed mode, `FEATURE.md` is the only authoritative feature specification. `STATUS.md` records
+mutable delivery state only and must not duplicate or alter requirement meaning. The feature index is derived
+from `FEATURE.md` identity metadata and never outranks it.
+
 ## Handoff
 
 Handoff requires:

@@ -26,6 +26,6 @@ Result: Pass | Findings
 
 ## Integrity
 
-- Requirement files changed: No
+- Authoritative specification changed: No
 - Baseline hashes unchanged: Yes
 - Unauthorized sources used: No
