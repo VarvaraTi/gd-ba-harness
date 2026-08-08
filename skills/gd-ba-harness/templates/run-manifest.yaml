@@ -1,0 +1,31 @@
+run_id: RUN-YYYYMMDD-001
+mode: INITIAL
+read_only: false
+requested_outcome: ""
+project_profile: Harness/project-profile.yaml
+requirements_workspace: ""
+owner: ""
+risk_tier: 2
+limits:
+  max_changes: 1
+  max_sources: 5
+  max_source_lines: 10000
+  max_questions_per_round: 5
+  max_question_rounds: 2
+  max_requirements_per_batch: 15
+  allow_subagents: false
+sources:
+  permitted: []
+  denied: []
+  retrieved: []
+connectors: []
+stopping_conditions:
+  - unresolved blocking decision
+  - material source conflict
+  - unauthorized source
+approvals:
+  required: []
+expected_outputs: []
+downstream_consumer: ""
+on_limit_exceeded: stop-and-propose-split
+status: proposed

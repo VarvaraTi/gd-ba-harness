@@ -1,0 +1,17 @@
+{
+  "name": "gd-ba-harness-marketplace",
+  "owner": {
+    "name": "Business Analysis"
+  },
+  "plugins": [
+    {
+      "name": "gd-ba-harness",
+      "description": "Governed orchestration for business-analysis requirements work.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/gd-ba-harness"
+      ]
+    }
+  ]
+}

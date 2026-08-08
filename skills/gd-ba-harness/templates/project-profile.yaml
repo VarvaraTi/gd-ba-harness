@@ -1,0 +1,42 @@
+schema_version: 1
+project:
+  id: PROJECT-ID
+  name: Project name
+  requirements_workspace: requirements-project-id
+authority:
+  intent_owner: role-or-person
+  product_scope_owner: role-or-person
+  specialist_routes: {}
+sources:
+  registry: Harness/source-registry.yaml
+connectors:
+  jira:
+    enabled: false
+    mode: read-only
+    project_keys: []
+    capabilities: []
+  confluence:
+    enabled: false
+    mode: read-only
+    spaces: []
+    capabilities: []
+risk:
+  default_tier: 2
+  protected_topics: []
+enabled_modes:
+  - INITIAL
+  - UPDATE
+  - VALIDATE
+limits:
+  max_changes: 1
+  max_sources: 5
+  max_source_lines: 10000
+  max_questions_per_round: 5
+  max_question_rounds: 2
+  max_requirements_per_batch: 15
+handoffs:
+  engineering: {}
+  independent_testing: {}
+retention:
+  classification: internal
+  raw_evidence: organization-policy

@@ -1,0 +1,11 @@
+sources: []
+# Add one source per entry:
+# - id: SRC-001
+#   title: Product intent
+#   kind: intent
+#   location: https://example.invalid/source
+#   authority: authoritative
+#   owner: product-manager
+#   freshness: durable
+#   classification: internal
+#   status: approved
