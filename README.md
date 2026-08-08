@@ -24,10 +24,19 @@ You do not need to clone a repository, run commands, edit YAML, or know the mode
 
 1. Open Claude Cowork with your organization account.
 2. Open **Customize → Plugins**.
-3. Find and enable `gd-ba-harness`.
-4. Start a new Cowork session.
+3. In **Personal plugins**, click `+`.
+4. Select **Add marketplace** → **Add from repository**.
+5. Enter:
+   ```text
+   https://github.com/VarvaraTi/gd-ba-harness
+   ```
+   The `VarvaraTi/gd-ba-harness` shorthand also works.
+6. Authorize GitHub access if Cowork requests it.
+7. Wait for marketplace synchronization.
+8. Find `gd-ba-harness` and click **Install**.
+9. Start a new Cowork session and invoke `/gd-ba-harness`.
 
-If the plugin is missing, ask your Cowork administrator to subscribe you or your team to it.
+If Cowork cannot access the repository, connect the Claude GitHub App to `gd-ba-harness`. For an organization-managed installation, ask an Owner or Primary Owner to open **Organization settings → Plugins → Add plugin → GitHub**, enter `VarvaraTi/gd-ba-harness`, and assign the plugin to your team.
 
 ### 2. Describe one change
 
