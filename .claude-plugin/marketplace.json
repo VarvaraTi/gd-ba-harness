@@ -10,7 +10,7 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/gd-ba-harness"
+        "./plugins/gd-ba-harness/skills/gd-ba-harness"
       ]
     }
   ]

@@ -4,6 +4,24 @@ Compact BA harness for creating, updating, and validating traceable requirements
 
 ## Install
 
+### Codex
+
+Install this repository as a Codex Git marketplace, then install the plugin:
+
+```text
+codex plugin marketplace add VarvaraTi/gd-ba-harness --ref main
+codex plugin add gd-ba-harness@gd-ba-harness-marketplace
+```
+
+Start a new Codex thread and explicitly ask it to use `gd-ba-harness` for your requirement task.
+
+Updates are not automatic. After a new release, refresh the marketplace and reinstall the plugin:
+
+```text
+codex plugin marketplace upgrade gd-ba-harness-marketplace
+codex plugin add gd-ba-harness@gd-ba-harness-marketplace
+```
+
 ### Claude Cowork
 
 **Customize → Plugins → + → Add marketplace → Add from repository**, then enter:
@@ -96,4 +114,6 @@ make test
 make build
 ```
 
-`make build` creates `dist/gd-ba-harness.skill` with one top-level folder and `SKILL.md` directly inside it.
+`make build` creates `dist/gd-ba-harness.skill` with one top-level folder and `SKILL.md` directly inside it. The Codex and Claude distributions share the canonical skill source at `plugins/gd-ba-harness/skills/gd-ba-harness/`.
+
+For each Codex release, update the `version` in `plugins/gd-ba-harness/.codex-plugin/plugin.json` before pushing the change. Users can then run the update commands above.
