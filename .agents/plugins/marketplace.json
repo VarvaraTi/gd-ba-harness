@@ -1,0 +1,20 @@
+{
+  "name": "gd-ba-harness-marketplace",
+  "interface": {
+    "displayName": "Gd Ba Harness Marketplace"
+  },
+  "plugins": [
+    {
+      "name": "gd-ba-harness",
+      "source": {
+        "source": "local",
+        "path": "./plugins/gd-ba-harness"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

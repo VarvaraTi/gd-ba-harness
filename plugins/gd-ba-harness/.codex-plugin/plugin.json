@@ -1,0 +1,22 @@
+{
+  "name": "gd-ba-harness",
+  "version": "0.3.0",
+  "description": "Governed workflow for creating, updating, and validating traceable software requirements.",
+  "author": {
+    "name": "VarvaraTi"
+  },
+  "repository": "https://github.com/VarvaraTi/gd-ba-harness",
+  "keywords": ["business-analysis", "requirements", "traceability"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "GD BA Harness",
+    "shortDescription": "Create and validate traceable requirements.",
+    "longDescription": "A bounded business-analysis workflow with source traceability and human approval.",
+    "developerName": "VarvaraTi",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Write"],
+    "defaultPrompt": [
+      "Use gd-ba-harness to create a governed requirement set for this change."
+    ]
+  }
+}
