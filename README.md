@@ -22,6 +22,17 @@ codex plugin marketplace upgrade gd-ba-harness-marketplace
 codex plugin add gd-ba-harness@gd-ba-harness-marketplace
 ```
 
+### ChatGPT desktop app
+
+**Plugins → + → Add marketplace → Add from repository**, then enter:
+
+```text
+https://github.com/VarvaraTi/gd-ba-harness
+```
+
+Install `gd-ba-harness`, then start a new chat and select it from the Plugins Directory. In Codex,
+invoke `$gd-ba-harness`.
+
 ### Claude Cowork
 
 **Customize → Plugins → + → Add marketplace → Add from repository**, then enter:
